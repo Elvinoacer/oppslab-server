@@ -12,7 +12,12 @@ app.use(
   }),
 );
 app.get("/", (req, res) => {
-  res.send("Socket.IO Server Running");
+  res.json({
+    success: true,
+    message: "OppsLab Socket.IO Server is running",
+    status: "active",
+    timestamp: new Date().toISOString(),
+  });
 });
 
 const PORT = 4000;
